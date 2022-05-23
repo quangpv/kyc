@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
 import { KycController } from './kyc.controller';
-import { SearchKycCmd } from './search-kyc-cmd';
+import { SearchKycCmd } from './cmd/search-kyc-cmd';
 import { EsService } from './es-service';
 import { HttpModule } from '@nestjs/axios';
 import { KycFactory } from './model/kyc.factory';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { KycHistoryEntity } from './model/kyc-history.entity';
-import { KycHistoryRepo } from './KycHistoryRepo';
-import { GetKycHistoriesCmd } from './get-kyc-histories.cmd';
+import { KycHistoryRepo } from './kyc-history.repo';
+import { GetKycHistoriesCmd } from './cmd/get-kyc-histories.cmd';
 
 @Module({
   imports: [

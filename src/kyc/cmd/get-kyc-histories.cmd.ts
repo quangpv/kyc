@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { GetKycHistoryRequest } from './model/get-kyc-history.request';
-import { KycHistoryResponse, Metadata } from './model/get-kyc-history.response';
-import { KycHistoryRepo } from './KycHistoryRepo';
+import { GetKycHistoryRequest } from '../model/get-kyc-history.request';
+import { KycHistoryResponse, Metadata } from '../model/get-kyc-history.response';
+import { KycHistoryRepo } from '../kyc-history.repo';
 
 @Injectable()
 export class GetKycHistoriesCmd {

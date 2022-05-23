@@ -7,13 +7,13 @@ import {
   Query,
   ValidationPipe,
 } from '@nestjs/common';
-import { SearchKycCmd } from './search-kyc-cmd';
+import { SearchKycCmd } from './cmd/search-kyc-cmd';
 import { SearchKycResponse } from './model/search-kyc.response';
 import {
   AdvancedSearchKycRequest,
   SearchKycRequest,
 } from './model/search-kyc.request';
-import { GetKycHistoriesCmd } from './get-kyc-histories.cmd';
+import { GetKycHistoriesCmd } from './cmd/get-kyc-histories.cmd';
 import { KycHistoryResponse, Metadata } from './model/get-kyc-history.response';
 import { GetKycHistoryRequest } from './model/get-kyc-history.request';
 

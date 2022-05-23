@@ -3,15 +3,15 @@ import Fuse from 'fuse.js';
 import {
   AdvancedSearchKycRequest,
   SearchKycRequest,
-} from './model/search-kyc.request';
-import { EsService } from './es-service';
-import { SearchKycResponse } from './model/search-kyc.response';
-import { ElasticDTO } from './model/es.dto';
-import { ElasticFilterFactory } from './filter/elastic-filter';
-import { KycFactory } from './model/kyc.factory';
-import { KycHistoryEntity } from './model/kyc-history.entity';
-import { SearchTerm } from './model/get-kyc-history.response';
-import { KycHistoryRepo } from './KycHistoryRepo';
+} from '../model/search-kyc.request';
+import { EsService } from '../es-service';
+import { SearchKycResponse } from '../model/search-kyc.response';
+import { ElasticDTO } from '../model/es.dto';
+import { ElasticFilterFactory } from '../filter/elastic-filter';
+import { KycFactory } from '../model/kyc.factory';
+import { KycHistoryEntity } from '../model/kyc-history.entity';
+import { SearchTerm } from '../model/get-kyc-history.response';
+import { KycHistoryRepo } from '../kyc-history.repo';
 
 @Injectable()
 export class SearchKycCmd {
