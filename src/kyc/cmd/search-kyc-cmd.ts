@@ -63,6 +63,8 @@ export class SearchKycCmd {
         type: 'best_fields',
         query: text,
         fields: queryFields,
+        fuzziness: 'AUTO',
+        prefix_length: 2,
       },
     };
   }
