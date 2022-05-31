@@ -1,4 +1,22 @@
 export interface ElasticDTO {
+  EntityEnforcements: {
+    EntityEnforcement: {
+      EntityEnforcementGUID: string;
+      EnforcementDesc: string;
+      SourceName: string;
+      SourceNameAbbrev: string;
+      AdministrativeUnitName: string;
+      ISOStandard: string;
+      LastUpdated: string;
+      EntityEnforcementSubcategories: {
+        Subcategory: {
+          EntityEnforcementSubCategoryGUID: string;
+          SubCategoryLabel: string;
+          LastUpdated: string;
+        };
+      };
+    };
+  };
   EntityGUID: string;
   EntityTypeDesc: string;
   Gender: string;
@@ -63,6 +81,27 @@ export interface ElasticDTO {
         BirthYear: number;
         BirthMonth: number;
         BirthDay: number;
+      };
+      LastUpdated: string;
+    };
+  };
+  EntityIdentifications: {
+    EntityIdentification: {
+      EntityIdentificationGUID: string;
+      AdministrativeUnitName: string;
+      ISOStandard: string;
+      IdentificationIssuer: string;
+      IdentificationTypeDesc: string;
+      IdentificationNumber: string;
+      IssueDate: {
+        IssueYear: number;
+        IssueMonth: number;
+        IssueDay: number;
+      };
+      ExpirationDate: {
+        ExpirationYear: number;
+        ExpirationMonth: number;
+        ExpirationDay: number;
       };
       LastUpdated: string;
     };

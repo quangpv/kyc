@@ -12,6 +12,7 @@ import { KycFactory } from '../model/kyc.factory';
 import { KycHistoryEntity } from '../model/kyc-history.entity';
 import { SearchTerm } from '../model/get-kyc-history.response';
 import { KycHistoryRepo } from '../kyc-history.repo';
+import { IdGenerator } from '../id-generator';
 
 @Injectable()
 export class SearchKycCmd {
@@ -20,6 +21,7 @@ export class SearchKycCmd {
     private esService: EsService,
     private kycFactory: KycFactory,
     private kycHistoryRepo: KycHistoryRepo,
+    private idGenerator: IdGenerator,
   ) {}
 
   async search(request: SearchKycRequest): Promise<SearchKycResponse[]> {
@@ -27,6 +29,9 @@ export class SearchKycCmd {
 
     const queryFields = [
       'Name',
+      'FirstName',
+      'MiddleName',
+      'LastName',
       'EntityAliases.EntityAlias.Name',
       'EntityAliases.EntityAlias.FirstName',
       'EntityAliases.EntityAlias.LastName',
