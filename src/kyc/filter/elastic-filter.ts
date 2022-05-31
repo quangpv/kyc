@@ -115,6 +115,7 @@ class DateOfBirthFilter extends ElasticFilter {
 
   constructor(dob: string) {
     super();
+    if (!dob) return;
     let dmy = dob.split('-');
     if (dmy.length == 0) {
       dmy = dob.split('/');
@@ -129,15 +130,15 @@ class DateOfBirthFilter extends ElasticFilter {
   }
 
   isAccept(value: ElasticDTO): boolean {
-    const dob = value.EntityDOBs.EntityDOB.BirthDate;
+    const dob = value.EntityDOBs?.EntityDOB?.BirthDate;
     return (
-      this.date == dob.BirthDay &&
-      this.month == dob.BirthMonth &&
-      this.year == dob.BirthYear
+      this.date == dob?.BirthDay &&
+      this.month == dob?.BirthMonth &&
+      this.year == dob?.BirthYear
     );
   }
 
   isFilterable(): boolean {
-    return this.date != 0;
+    return this.date && this.date != 0;
   }
 }
