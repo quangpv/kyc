@@ -115,7 +115,7 @@ class DateOfBirthFilter extends ElasticFilter {
 
   constructor(dob: string) {
     super();
-    if (!dob) return;
+    if (!dob || dob.length == 0) return;
     let dmy = dob.split('-');
     if (dmy.length == 0) {
       dmy = dob.split('/');
