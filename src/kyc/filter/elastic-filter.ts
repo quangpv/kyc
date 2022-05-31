@@ -79,9 +79,11 @@ class CountryFilter extends ElasticFilter {
   }
 
   isAccept(value: ElasticDTO): boolean {
-    const address = value.EntityAddresses.EntityAddress;
-    const countryCode = address.ISOStandard.toLowerCase();
-    const country = address.Country.toLowerCase();
+    const address = value.EntityAddresses?.EntityAddress;
+    const countryCode = address?.ISOStandard?.toLowerCase();
+    const country = address?.Country?.toLowerCase();
+    if (!country || !countryCode) return true;
+
     for (const filterCountry of this.filterableCountries) {
       if (country.includes(filterCountry) || countryCode == filterCountry)
         return true;
