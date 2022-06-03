@@ -2,6 +2,9 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class SearchKycResponse {
   @ApiProperty()
+  readonly id!: string;
+
+  @ApiProperty()
   readonly entityType!: string;
 
   @ApiProperty()

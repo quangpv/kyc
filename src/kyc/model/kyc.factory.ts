@@ -30,6 +30,7 @@ export class KycFactory {
     }
 
     return {
+      id: item.EntityGUID || '',
       entityName: item.Name,
       entityType: item.EntityTypeDesc,
       categories: categories,
