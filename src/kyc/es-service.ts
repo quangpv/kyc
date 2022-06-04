@@ -29,6 +29,7 @@ export class EsService {
   }
 
   private authBase64(): string {
-    return btoa(`${this.username}:${this.password}`);
+    const auth = `${this.username}:${this.password}`;
+    return Buffer.from(auth, 'binary').toString('base64');
   }
 }
